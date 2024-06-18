@@ -6,4 +6,4 @@ cd ansible-playbooks/lamp_ubuntu1804/
 cp /local/repository/default.yml vars/
 HOST=$(ssh -o StrictHostKeyChecking=no hostname -f)
 sed -i "s/HOSTNAME/$HOST/g" vars/default.yml
-ansible-playbook playbook.yml -l server1 -u lngo
+ansible-playbook playbook.yml -l server1 -u hn9672
