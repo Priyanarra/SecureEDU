@@ -9,6 +9,6 @@ while [ ! -f /var/nfs/keys/id_rsa ]; do
   sleep 10
 done
 
-cp /var/nfs/keys/id_rsa* /users/lngo/.ssh/
-chown lngo: /users/hn9672/.ssh/id_rsa*
+cp /var/nfs/keys/id_rsa* /users/hn9672/.ssh/
+chown hn9672: /users/hn9672/.ssh/id_rsa*
 runuser -u hn9672 -- cat /users/hn9672/.ssh/id_rsa.pub >> /users/hn9672/.ssh/authorized_keys
