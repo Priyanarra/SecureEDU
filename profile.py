@@ -11,11 +11,13 @@ link = request.LAN("lan")
 for i in range(2):
   if i == 0:
     node = request.XenVM("webserver")
+           node.routable_control_ip = "true"  # Ensure webserver has a public IP
   
   else:
-    node = request.XenVM("observer")       
+    node = request.XenVM("observer")  
+           node.routable_control_ip = "false"  # Ensure observer does not have a public IP
 
-  node.routable_control_ip = "true"
+  #node.routable_control_ip = "true"
   node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU20-64-STD"
   iface = node.addInterface("if" + str(i))
   iface.component_id = "eth1"
